@@ -8,78 +8,80 @@
 
 #import "VendorController.h"
 
+static NSString * const kVendorsKey = @"vendors";
+
+
+@interface VendorController ()
+
+@property (strong, nonatomic) NSArray *vendors;
+
+@end
+
 @implementation VendorController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:kVendorsKey]) {
+            self.vendors = [[NSUserDefaults standardUserDefaults] objectForKey:kVendorsKey];
+        } else {
+            [self serializeJSONData];
+        }
+    }
+    return self;
+}
 
--(NSArray *)favoritedVendors {
+
+- (NSArray *)favoritedVendors {
     NSPredicate *isFavorite = [NSPredicate predicateWithFormat:@"isFavorite == 1"];
-    NSArray *favoritedVendors = [self.vendors filteredArrayUsingPredicate:isFavorite];
+    NSArray *favoritedEvents = [self.vendors filteredArrayUsingPredicate:isFavorite];
     
-    return favoritedVendors;
+    return favoritedEvents;
 }
 
--(NSArray *)vendors {
+- (void)serializeJSONData {
     
-    NSURL *url1 =[NSURL fileURLWithPath:@"www.google.com"];
-    NSURL *url2 =[NSURL fileURLWithPath:@"www.cnn.com"];
-    NSURL *url3 =[NSURL fileURLWithPath:@"www.amazon.com"];
+    self.vendors = [self getDataForResorce:@"clcvendors"];
     
-    NSArray *linksArray = [[NSArray alloc]initWithObjects:url1,url2,url3, nil];
-    
-    Vendor *vendor1 = [Vendor new];
-    Vendor *vendor2 = [Vendor new];
-    Vendor *vendor3 = [Vendor new];
-    Vendor *vendor4 = [Vendor new];
-    
-    vendor1.name = @"Vendor1";
-    vendor1.descript= @"The first vendor";
-    vendor1.locationName = @"Galivan Center";
-    vendor1.links = linksArray;
-    vendor1.phoneNumber= @"8015555555";
-    vendor1.isFavorite = FALSE;
-    vendor1.category = @"Art";
-    vendor1.email = @"vendor1@whereVendorsLive.com";
-    vendor1.boothLocation = @"You know, in the back corner";
-    
-    vendor2.name = @"Vendor2";
-    vendor2.descript= @"The second vendor";
-    vendor2.locationName = @"Galivan Center";
-    vendor2.links = linksArray;
-    vendor2.phoneNumber= @"8015555555";
-    vendor2.isFavorite = TRUE;
-    vendor2.category = @"Art";
-    vendor2.email = @"vendorTwo@whereVendorsLive.com";
-    vendor2.boothLocation = @"You know, the opposite corner";
-    
-    vendor3.name = @"Vendor3";
-    vendor3.descript= @"The third vendor";
-    vendor3.locationName = @"Galivan Center";
-    vendor3.links = linksArray;
-    vendor3.phoneNumber= @"8015555555";
-    vendor3.isFavorite = FALSE;
-    vendor3.category = @"Art";
-    vendor3.email = @"vendorNumber3@whereVendorsLive.com";
-    vendor3.boothLocation = @"You know, the other corner";
-    
-    vendor4.name = @"Vendor4";
-    vendor4.descript= @"The fourth vendor";
-    vendor4.locationName = @"Galivan Center";
-    vendor4.links = linksArray;
-    vendor4.phoneNumber= @"8015555555";
-    vendor4.isFavorite = TRUE;
-    vendor4.category = @"Pottery";
-    vendor4.email = @"fourthVendor@whereVendorsLive.com";
-    vendor4.boothLocation = @"You know, the corner not taken";
-    
-    return @[vendor1,vendor2,vendor3,vendor4];
 }
 
--(void)setFavorite:(Vendor *)vendor {
-    vendor.isFavorite =YES;
+- (NSArray *)getDataForResorce:(NSString *)resource {
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    NSError *error;
+    
+    NSDictionary *vendorData = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[bundle URLForResource:resource withExtension:@"json"]] options:NSJSONReadingAllowFragments error:&error];
+    
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    NSMutableArray *vendors = [NSMutableArray new];
+    
+    for (NSDictionary *vendorDictionary in vendorData[@"vendors"]) {
+        Vendor *vendor = [[Vendor alloc] initWithDictionary:vendorDictionary];
+        [vendors addObject:vendor];
+    }
+    
+    return vendors;
 }
 
--(void)removeFavorite:(Vendor *)vendor {
+- (void)saveVendors {
+    [[NSUserDefaults standardUserDefaults] setObject:self.vendors forKey:kVendorsKey];
+}
+
+- (void)setFavorite:(Vendor *)vendor {
+    vendor.isFavorite = YES;
+    
+    [self saveVendors];
+}
+
+- (void)removeFavorite:(Vendor *)vendor {
     vendor.isFavorite = NO;
+    
+    [self saveVendors];
 }
 
 @end

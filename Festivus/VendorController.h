@@ -11,8 +11,8 @@
 
 @interface VendorController : NSObject
 
-@property (strong, nonatomic) NSArray *vendors;
-@property (strong, nonatomic) NSArray *favoritedVendors;
+@property (strong, nonatomic, readonly) NSArray *vendors;
+@property (strong, nonatomic, readonly) NSArray *favoritedVendors;
 
 - (void)setFavorite:(Vendor*)vendor;
 - (void)removeFavorite:(Vendor*)vendor;

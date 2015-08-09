@@ -7,8 +7,66 @@
 //
 
 #import "EventController.h"
+@import UIKit;
+
+static NSString * const kEventsKey = @"Events";
+static NSString * const kWorkshopsKey = @"Workshops";
+
+
+@interface EventController ()
+
+@property (strong, nonatomic) NSArray *events;
+@property (strong, nonatomic) NSArray *workshops;
+
+@end
+
 
 @implementation EventController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:kEventsKey]) {
+            [self loadFromDefaults];
+        } else {
+            [self serializeJSONData];
+        }
+    }
+    return self;
+}
+
+- (void)loadFromDefaults {
+    
+    
+    #warning eric is working on nscoding, so simplify this whole method
+    
+    // load events
+    
+    NSArray *eventDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:kEventsKey];
+    
+    NSMutableArray *events = [NSMutableArray new];
+    
+    for (NSDictionary *dictionary in eventDictionaries) {
+        Event *event = [[Event alloc] initWithDictionary:dictionary];
+        [events addObject:event];
+    }
+    
+    self.events = events;
+    
+    // load workshops
+    
+    NSArray *workshopDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:kWorkshopsKey];
+    
+    NSMutableArray *workshops = [NSMutableArray new];
+    
+    for (NSDictionary *dictionary in workshopDictionaries) {
+        Event *event = [[Event alloc] initWithDictionary:dictionary];
+        [workshops addObject:event];
+    }
+    
+    self.workshops = workshops;
+}
 
 - (NSArray *)favoritedEvents {
     NSPredicate *isFavorite = [NSPredicate predicateWithFormat:@"isFavorite == 1"];
@@ -17,60 +75,55 @@
     return favoritedEvents;
 }
 
-- (NSArray *)events {
+- (NSArray *)favoritedWorkshops {
+    NSPredicate *isFavorite = [NSPredicate predicateWithFormat:@"isFavorite == 1"];
+    NSArray *favoritedEvents = [self.events filteredArrayUsingPredicate:isFavorite];
     
-    NSURL *url1 =[NSURL fileURLWithPath:@"www.google.com"];
+    return favoritedEvents;
+}
+
+- (void)serializeJSONData {
     
-    Event *event1 = [Event new];
-    Event *event2 = [Event new];
-    Event *event3 = [Event new];
-    Event *event4 = [Event new];
+    self.events = [self getDataForResorce:@"clcmusic"];
+    self.workshops = [self getDataForResorce:@"clcworkshops"];
     
-    event1.name = @"Event 1";
-    event1.startDate =[NSDate date];
-    event1.endDate = [NSDate date];
-    event1.descript= @"The first vendor";
-    event1.locationName = @"Galivan Center";
-    event1.url = url1;
-    event1.isFavorite = FALSE;
-    event1.category = @"Art";
+}
+
+- (NSArray *)getDataForResorce:(NSString *)resource {
     
-    event2.name = @"Event 2";
-    event2.startDate =[NSDate date];
-    event2.endDate = [NSDate date];
-    event2.descript= @"The first vendor";
-    event2.locationName = @"Galivan Center";
-    event2.url = url1;
-    event2.isFavorite = FALSE;
-    event2.category = @"Art";
+    NSBundle *bundle = [NSBundle mainBundle];
     
-    event3.name = @"Event 3";
-    event3.startDate =[NSDate date];
-    event3.endDate = [NSDate date];
-    event3.descript= @"The first vendor";
-    event3.locationName = @"Galivan Center";
-    event3.url = url1;
-    event3.isFavorite = FALSE;
-    event3.category = @"Art";
+    NSError *error;
     
-    event4.name = @"Event 4";
-    event4.startDate =[NSDate date];
-    event4.endDate = [NSDate date];
-    event4.descript= @"The first vendor";
-    event4.locationName = @"Galivan Center";
-    event4.url = url1;
-    event4.isFavorite = FALSE;
-    event4.category = @"Art";
+    NSArray *eventDictionaries = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[bundle URLForResource:resource withExtension:@"json"]] options:NSJSONReadingAllowFragments error:&error];
     
-    return @[event1,event2,event3,event4];
+    NSMutableArray *events = [NSMutableArray new];
+
+    for (NSDictionary *eventDictionary in eventDictionaries) {
+        Event *event = [[Event alloc] initWithDictionary:eventDictionary];
+        [events addObject:event];
+    }
+    
+    return eventDictionaries;
 }
 
 - (void)setFavorite:(Event *)event {
     event.isFavorite =YES;
+    
+    [self scheduleLocalNotificationsForEvent:event];
+    
+    [self saveEvents];
 }
 
 - (void)removeFavorite:(Event *)event {
     event.isFavorite = NO;
+    
+    [self saveEvents];
+}
+
+- (void)saveEvents {
+    [[NSUserDefaults standardUserDefaults] setObject:self.events forKey:kEventsKey];
+    [[NSUserDefaults standardUserDefaults] setObject:self.workshops forKey:kWorkshopsKey];
 }
 
 - (void)scheduleLocalNotificationsForEvent:(Event *)event {
@@ -80,6 +133,12 @@
     // schedule local notification for 24 hours before event starts
     // schedule local notification for 1 hour before event starts
     
+}
+
+- (void)cancelNotificationsForEvent:(Event *)event {
+    
+    #warning this cancels all notifications, not just the ones for the specific event
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 - (void)createCalendarEventFromEvent:(Event *)event {

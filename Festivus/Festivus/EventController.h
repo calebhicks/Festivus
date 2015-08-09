@@ -14,6 +14,8 @@
 @property (strong, nonatomic, readonly) NSArray *events;
 @property (strong, nonatomic, readonly) NSArray *favoritedEvents;
 
+@property (strong, nonatomic, readonly) NSArray *workshops;
+@property (strong, nonatomic, readonly) NSArray *favoritedWorkshops;
 
 - (void)setFavorite:(Event *)event;
 - (void)removeFavorite:(Event *)event;
