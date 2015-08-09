@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 @import CoreLocation;
 
-@interface Vendor : NSObject
+@interface Vendor : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSString *vendorDescription;
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) CLLocation *locationCoordinate;
 @property (strong, nonatomic) NSArray *links;

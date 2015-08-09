@@ -32,7 +32,7 @@
     Vendor *vendor4 = [Vendor new];
     
     vendor1.name = @"Vendor1";
-    vendor1.descript= @"The first vendor";
+    vendor1.vendorDescription= @"The first vendor";
     vendor1.locationName = @"Galivan Center";
     vendor1.links = linksArray;
     vendor1.phoneNumber= @"8015555555";
@@ -42,7 +42,7 @@
     vendor1.boothLocation = @"You know, in the back corner";
     
     vendor2.name = @"Vendor2";
-    vendor2.descript= @"The second vendor";
+    vendor2.vendorDescription= @"The second vendor";
     vendor2.locationName = @"Galivan Center";
     vendor2.links = linksArray;
     vendor2.phoneNumber= @"8015555555";
@@ -52,7 +52,7 @@
     vendor2.boothLocation = @"You know, the opposite corner";
     
     vendor3.name = @"Vendor3";
-    vendor3.descript= @"The third vendor";
+    vendor3.vendorDescription= @"The third vendor";
     vendor3.locationName = @"Galivan Center";
     vendor3.links = linksArray;
     vendor3.phoneNumber= @"8015555555";
@@ -62,7 +62,7 @@
     vendor3.boothLocation = @"You know, the other corner";
     
     vendor4.name = @"Vendor4";
-    vendor4.descript= @"The fourth vendor";
+    vendor4.vendorDescription= @"The fourth vendor";
     vendor4.locationName = @"Galivan Center";
     vendor4.links = linksArray;
     vendor4.phoneNumber= @"8015555555";

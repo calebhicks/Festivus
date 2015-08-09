@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
-@property (strong, nonatomic) NSString *descript;
+@property (strong, nonatomic) NSString *eventDescription;
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) CLLocation *locationCoordinate;
 @property (nonatomic) BOOL isFavorite;

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F388F011B76EA050030E2F4 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6031B76BDE300FE5B08 /* Vendor.m */; };
+		0F388F021B76EA0B0030E2F4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6001B76BDCB00FE5B08 /* Event.m */; };
+		0F388F031B76EA100030E2F4 /* VendorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB5FD1B76B90800FE5B08 /* VendorController.m */; };
+		0F388F041B76EA140030E2F4 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6061B76C7AD00FE5B08 /* EventController.m */; };
 		2CB13E111B76B45500F2D4AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB13E101B76B45500F2D4AA /* main.m */; };
 		2CB13E141B76B45500F2D4AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB13E131B76B45500F2D4AA /* AppDelegate.m */; };
 		2CB13E171B76B45500F2D4AA /* VendorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB13E161B76B45500F2D4AA /* VendorListViewController.m */; };
@@ -37,7 +41,7 @@
 		242CB5FD1B76B90800FE5B08 /* VendorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorController.m; path = ../VendorController.m; sourceTree = "<group>"; };
 		242CB5FF1B76BDCA00FE5B08 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		242CB6001B76BDCB00FE5B08 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		242CB6021B76BDE300FE5B08 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
+		242CB6021B76BDE300FE5B08 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Vendor.h; sourceTree = "<group>"; };
 		242CB6031B76BDE300FE5B08 /* Vendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vendor.m; sourceTree = "<group>"; };
 		242CB6051B76C7AD00FE5B08 /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventController.h; sourceTree = "<group>"; };
 		242CB6061B76C7AD00FE5B08 /* EventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventController.m; sourceTree = "<group>"; };
@@ -281,15 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F388F021B76EA0B0030E2F4 /* Event.m in Sources */,
 				2CB13E171B76B45500F2D4AA /* VendorListViewController.m in Sources */,
 				68717A441B76BF3000F38821 /* WorkshopEventDataSource.m in Sources */,
 				68717A501B76C13100F38821 /* EventDetailTableViewController.m in Sources */,
 				68717A561B76C19B00F38821 /* DonateTableViewController.m in Sources */,
 				2CB13E141B76B45500F2D4AA /* AppDelegate.m in Sources */,
+				0F388F041B76EA140030E2F4 /* EventController.m in Sources */,
 				68717A4D1B76C11A00F38821 /* VendorDetailTableViewController.m in Sources */,
 				68717A3B1B76BE9900F38821 /* EventListViewController.m in Sources */,
 				2CB13E111B76B45500F2D4AA /* main.m in Sources */,
 				68717A411B76BF1700F38821 /* MusicEventDataSource.m in Sources */,
+				0F388F011B76EA050030E2F4 /* Vendor.m in Sources */,
+				0F388F031B76EA100030E2F4 /* VendorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
