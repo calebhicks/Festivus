@@ -22,4 +22,6 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *boothLocation;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

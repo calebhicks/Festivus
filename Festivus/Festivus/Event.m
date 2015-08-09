@@ -10,4 +10,9 @@
 
 @implementation Event
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    
+    return [Event new];
+}
+
 @end

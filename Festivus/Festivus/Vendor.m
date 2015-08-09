@@ -10,4 +10,8 @@
 
 @implementation Vendor
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    return [Vendor new];
+}
+
 @end
