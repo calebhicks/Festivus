@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"NoResultsCell" bundle:nil] forCellReuseIdentifier:@"noResultsCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NoResultsTableViewCell" bundle:nil] forCellReuseIdentifier:@"noResultsCell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

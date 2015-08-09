@@ -23,6 +23,8 @@
 		759389641B76FA65007EA065 /* EventSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593895E1B76FA65007EA065 /* EventSearchResultTableViewCell.xib */; };
 		759389651B76FA65007EA065 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759389601B76FA65007EA065 /* SearchResultsViewController.m */; };
 		759389661B76FA65007EA065 /* VendorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759389621B76FA65007EA065 /* VendorListViewController.m */; };
+		7593896A1B76FBB5007EA065 /* NoResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 759389681B76FBB5007EA065 /* NoResultsTableViewCell.m */; };
+		7593896B1B76FBB5007EA065 /* NoResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 759389691B76FBB5007EA065 /* NoResultsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,9 @@
 		759389601B76FA65007EA065 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		759389611B76FA65007EA065 /* VendorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorListViewController.h; sourceTree = "<group>"; };
 		759389621B76FA65007EA065 /* VendorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorListViewController.m; sourceTree = "<group>"; };
+		759389671B76FBB5007EA065 /* NoResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoResultsTableViewCell.h; sourceTree = "<group>"; };
+		759389681B76FBB5007EA065 /* NoResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoResultsTableViewCell.m; sourceTree = "<group>"; };
+		759389691B76FBB5007EA065 /* NoResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoResultsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +181,9 @@
 				7593895E1B76FA65007EA065 /* EventSearchResultTableViewCell.xib */,
 				7593895F1B76FA65007EA065 /* SearchResultsViewController.h */,
 				759389601B76FA65007EA065 /* SearchResultsViewController.m */,
+				759389671B76FBB5007EA065 /* NoResultsTableViewCell.h */,
+				759389681B76FBB5007EA065 /* NoResultsTableViewCell.m */,
+				759389691B76FBB5007EA065 /* NoResultsTableViewCell.xib */,
 				759389611B76FA65007EA065 /* VendorListViewController.h */,
 				759389621B76FA65007EA065 /* VendorListViewController.m */,
 				68717A4B1B76C11A00F38821 /* VendorDetailTableViewController.h */,
@@ -276,6 +284,7 @@
 			files = (
 				2CB13E1A1B76B45500F2D4AA /* Main.storyboard in Resources */,
 				759389641B76FA65007EA065 /* EventSearchResultTableViewCell.xib in Resources */,
+				7593896B1B76FBB5007EA065 /* NoResultsTableViewCell.xib in Resources */,
 				2CB13E1F1B76B45500F2D4AA /* LaunchScreen.xib in Resources */,
 				2CB13E1C1B76B45500F2D4AA /* Images.xcassets in Resources */,
 			);
@@ -304,6 +313,7 @@
 				759389631B76FA65007EA065 /* EventSearchResultTableViewCell.m in Sources */,
 				68717A3B1B76BE9900F38821 /* EventListViewController.m in Sources */,
 				2CB13E111B76B45500F2D4AA /* main.m in Sources */,
+				7593896A1B76FBB5007EA065 /* NoResultsTableViewCell.m in Sources */,
 				759389661B76FA65007EA065 /* VendorListViewController.m in Sources */,
 				68717A411B76BF1700F38821 /* MusicEventDataSource.m in Sources */,
 			);
