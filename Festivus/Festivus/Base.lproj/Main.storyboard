@@ -35,6 +35,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="xVj-SV-Wab"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>

@@ -19,6 +19,10 @@
 		68717A4D1B76C11A00F38821 /* VendorDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A4C1B76C11A00F38821 /* VendorDetailTableViewController.m */; };
 		68717A501B76C13100F38821 /* EventDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A4F1B76C13100F38821 /* EventDetailTableViewController.m */; };
 		68717A561B76C19B00F38821 /* DonateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A551B76C19B00F38821 /* DonateTableViewController.m */; };
+		7550FF471B7703C400187AED /* VendorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB5FD1B76B90800FE5B08 /* VendorController.m */; };
+		7550FF481B7703C700187AED /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6001B76BDCB00FE5B08 /* Event.m */; };
+		7550FF491B7703C900187AED /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6031B76BDE300FE5B08 /* Vendor.m */; };
+		7550FF4A1B7703CC00187AED /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6061B76C7AD00FE5B08 /* EventController.m */; };
 		759389631B76FA65007EA065 /* EventSearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593895D1B76FA65007EA065 /* EventSearchResultTableViewCell.m */; };
 		759389641B76FA65007EA065 /* EventSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593895E1B76FA65007EA065 /* EventSearchResultTableViewCell.xib */; };
 		759389651B76FA65007EA065 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759389601B76FA65007EA065 /* SearchResultsViewController.m */; };
@@ -176,14 +180,9 @@
 		68717A581B76DA3D00F38821 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7593895C1B76FA65007EA065 /* EventSearchResultTableViewCell.h */,
-				7593895D1B76FA65007EA065 /* EventSearchResultTableViewCell.m */,
-				7593895E1B76FA65007EA065 /* EventSearchResultTableViewCell.xib */,
+				7550FF4B1B7704C900187AED /* Vendor Search Result Cells */,
 				7593895F1B76FA65007EA065 /* SearchResultsViewController.h */,
 				759389601B76FA65007EA065 /* SearchResultsViewController.m */,
-				759389671B76FBB5007EA065 /* NoResultsTableViewCell.h */,
-				759389681B76FBB5007EA065 /* NoResultsTableViewCell.m */,
-				759389691B76FBB5007EA065 /* NoResultsTableViewCell.xib */,
 				759389611B76FA65007EA065 /* VendorListViewController.h */,
 				759389621B76FA65007EA065 /* VendorListViewController.m */,
 				68717A4B1B76C11A00F38821 /* VendorDetailTableViewController.h */,
@@ -200,6 +199,19 @@
 				68717A551B76C19B00F38821 /* DonateTableViewController.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		7550FF4B1B7704C900187AED /* Vendor Search Result Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7593895C1B76FA65007EA065 /* EventSearchResultTableViewCell.h */,
+				7593895D1B76FA65007EA065 /* EventSearchResultTableViewCell.m */,
+				7593895E1B76FA65007EA065 /* EventSearchResultTableViewCell.xib */,
+				759389671B76FBB5007EA065 /* NoResultsTableViewCell.h */,
+				759389681B76FBB5007EA065 /* NoResultsTableViewCell.m */,
+				759389691B76FBB5007EA065 /* NoResultsTableViewCell.xib */,
+			);
+			name = "Vendor Search Result Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,16 +318,20 @@
 			files = (
 				68717A441B76BF3000F38821 /* WorkshopEventDataSource.m in Sources */,
 				68717A501B76C13100F38821 /* EventDetailTableViewController.m in Sources */,
+				7550FF4A1B7703CC00187AED /* EventController.m in Sources */,
 				68717A561B76C19B00F38821 /* DonateTableViewController.m in Sources */,
 				759389651B76FA65007EA065 /* SearchResultsViewController.m in Sources */,
 				2CB13E141B76B45500F2D4AA /* AppDelegate.m in Sources */,
 				68717A4D1B76C11A00F38821 /* VendorDetailTableViewController.m in Sources */,
+				7550FF481B7703C700187AED /* Event.m in Sources */,
 				759389631B76FA65007EA065 /* EventSearchResultTableViewCell.m in Sources */,
 				68717A3B1B76BE9900F38821 /* EventListViewController.m in Sources */,
 				2CB13E111B76B45500F2D4AA /* main.m in Sources */,
 				7593896A1B76FBB5007EA065 /* NoResultsTableViewCell.m in Sources */,
+				7550FF471B7703C400187AED /* VendorController.m in Sources */,
 				759389661B76FA65007EA065 /* VendorListViewController.m in Sources */,
 				68717A411B76BF1700F38821 /* MusicEventDataSource.m in Sources */,
+				7550FF491B7703C900187AED /* Vendor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

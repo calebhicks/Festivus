@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VendorController.h"
 
 @interface VendorListViewController : UIViewController
-@property (strong, nonatomic) NSArray *displayData;
 @property (strong, nonatomic) NSString *sortDescriptor;
+@property (strong, nonatomic) VendorController *datasource;
 @end

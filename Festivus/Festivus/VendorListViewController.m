@@ -7,6 +7,7 @@
 
 #import "VendorListViewController.h"
 #import "SearchResultsViewController.h"
+#import "EventSearchResultTableViewCell.h"
 //#import "SearchResultCell.h"
 
 #pragma warning - Set this to the appropriate search key.
@@ -26,12 +27,15 @@
 - (void)viewDidLoad {
    	[super viewDidLoad];
     self.resultsTableController = [[SearchResultsViewController alloc] init];
+    
+    self.datasource = [VendorController new];
+
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     [self.searchController setProvidesPresentationContextTransitionStyle:YES];
     self.searchController.searchResultsUpdater = self;
     [self.searchController.searchBar sizeToFit];
     self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.resultsTableController.tableView.delegate = self;
+//    self.resultsTableController.tableView.delegate = self;
     self.resultsTableController.tableView.dataSource = self.resultsTableController;
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
@@ -39,7 +43,7 @@
     self.resultsTableController.tableView.separatorColor = [UIColor clearColor];
     
     self.tableView.rowHeight = self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - self.tabBarController.tabBar.frame.size.height - self.searchController.searchBar.frame.size.height;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SuggestedSearchCell" bundle:nil] forCellReuseIdentifier:@"suggestedSearchCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"EventSearchResultTableViewCell" bundle:nil] forCellReuseIdentifier:@"searchResultCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -60,15 +64,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    Vendor *currentVendor = self.datasource.vendors[indexPath.row];
+    
+    EventSearchResultTableViewCell *resultCell = [tableView dequeueReusableCellWithIdentifier:@"resultCell"];
+    
+    if (!resultCell) {
+        resultCell = [[EventSearchResultTableViewCell alloc] init];
+    }
+    
+    resultCell.nameLabel.text = currentVendor.name;
+    
     // BUILD ME!
-    return [[UITableViewCell alloc] init];
+    return resultCell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     tableView.allowsSelection = NO;
 
     // BUILD ME!
-    return 1;
+    return [self.datasource.vendors count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,7 +95,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-        return 100; // Check the cell's xib file height to get appropriately looking cells.
+        return 138; // Check the cell's xib file height to get appropriately looking cells.
 }
 
 - (void)resetTable {
@@ -108,7 +122,7 @@
     // update the filtered array based on the search text
     NSString *searchText = searchController.searchBar.text;
 
-    NSMutableArray *searchResults = [NSMutableArray arrayWithArray:self.displayData];
+    NSMutableArray *searchResults = [NSMutableArray arrayWithArray:self.datasource.vendors];
     // strip out all the leading and trailing spaces
     NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     // break up the search terms (separated by spaces)
@@ -134,7 +148,7 @@
         // NSPredicate is made up of smaller, atomic parts: two NSExpressions (a left-hand value and a right-hand value)
         
         // name field matching
-        NSExpression *lhs = [NSExpression expressionForKeyPath:@"skillName"];
+        NSExpression *lhs = [NSExpression expressionForKeyPath:@"name"];
         NSExpression *rhs = [NSExpression expressionForConstantValue:searchString];
         NSPredicate *finalPredicate = [NSComparisonPredicate
                                        predicateWithLeftExpression:lhs
@@ -171,10 +185,7 @@
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:self.sortDescriptor
                                                  ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    searchResults = [NSMutableArray arrayWithArray:[searchResults sortedArrayUsingDescriptors:sortDescriptors]];
-        
 
-        
     // hand over the filtered results to our search results table
     SearchResultsViewController *tableController = (SearchResultsViewController *)self.searchController.searchResultsController;
     tableController.filteredResults = searchResults;
