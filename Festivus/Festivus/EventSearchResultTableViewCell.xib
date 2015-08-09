@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="138" id="KGk-i7-Jjw" customClass="EventSearchResultTableViewCell">
+            <rect key="frame" x="-1" y="0.0" width="487" height="138"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bkd-1b-zdf">
+                        <rect key="frame" x="8" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="bkd-1b-zdf" secondAttribute="height" multiplier="1:1" id="Hkh-YC-Cr6"/>
+                            <constraint firstAttribute="width" constant="100" id="wbD-I0-RP5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3mW-hH-KmU">
+                        <rect key="frame" x="116" y="44" width="363" height="16.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-As-RCP">
+                        <rect key="frame" x="116" y="69" width="363" height="16.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateStartEnd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000000000000009" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-d3-lhw">
+                        <rect key="frame" x="116" y="98" width="363" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j14-We-GlW">
+                        <rect key="frame" x="116" y="16" width="363" height="20.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6v0-d3-lhw" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4Aa-2B-BDg"/>
+                    <constraint firstItem="j14-We-GlW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="JiO-uR-39N"/>
+                    <constraint firstItem="3mW-hH-KmU" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Oyb-cG-mMO"/>
+                    <constraint firstItem="SQY-As-RCP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="SzC-k1-4wB"/>
+                    <constraint firstItem="SQY-As-RCP" firstAttribute="top" secondItem="3mW-hH-KmU" secondAttribute="bottom" constant="8" id="aWy-al-Jxq"/>
+                    <constraint firstAttribute="centerY" secondItem="bkd-1b-zdf" secondAttribute="centerY" constant="-0.25" id="cPo-Dv-WDs"/>
+                    <constraint firstItem="3mW-hH-KmU" firstAttribute="leading" secondItem="bkd-1b-zdf" secondAttribute="trailing" constant="8" id="fqq-de-nSH"/>
+                    <constraint firstItem="6v0-d3-lhw" firstAttribute="top" secondItem="SQY-As-RCP" secondAttribute="bottom" constant="12.5" id="hpO-gc-ijR"/>
+                    <constraint firstItem="j14-We-GlW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="iXc-I0-SdJ"/>
+                    <constraint firstItem="6v0-d3-lhw" firstAttribute="leading" secondItem="bkd-1b-zdf" secondAttribute="trailing" constant="8" id="nIV-R5-DI3"/>
+                    <constraint firstItem="3mW-hH-KmU" firstAttribute="top" secondItem="j14-We-GlW" secondAttribute="bottom" constant="8" id="qmC-g3-CMh"/>
+                    <constraint firstItem="bkd-1b-zdf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ubP-pq-KQd"/>
+                    <constraint firstItem="j14-We-GlW" firstAttribute="leading" secondItem="bkd-1b-zdf" secondAttribute="trailing" constant="8" id="wdn-4X-J9e"/>
+                    <constraint firstItem="SQY-As-RCP" firstAttribute="leading" secondItem="bkd-1b-zdf" secondAttribute="trailing" constant="8" id="xrq-IK-55f"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="LocationLabel" destination="3mW-hH-KmU" id="guP-2a-7u5"/>
+                <outlet property="categoryLabel" destination="SQY-As-RCP" id="d1b-f1-fok"/>
+                <outlet property="dateFromToLabel" destination="6v0-d3-lhw" id="YEF-9b-ZMV"/>
+                <outlet property="eventImage" destination="bkd-1b-zdf" id="7fN-8V-YYM"/>
+                <outlet property="nameLabel" destination="j14-We-GlW" id="pYp-s8-vkP"/>
+            </connections>
+            <point key="canvasLocation" x="296.5" y="271"/>
+        </tableViewCell>
+    </objects>
+</document>
