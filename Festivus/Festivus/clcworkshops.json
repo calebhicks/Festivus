@@ -1,0 +1,42 @@
+[
+  {
+    "name":"Cake Decorating with Megan Whittaker of Noisette",
+    "description":"The Cake Decorating Workshop presented by Megan Whittaker of Noisette will teach local bakers and food lovers how to design and decorate baked masterpieces. Megan is a Utah-based baker who specializes in creating and decorating macarons, cakes, and custom dessert tables, marshmallows, chocolate, caramels, gluten-free and special diet treats, and more.",
+    "date":"11/5/2015 18:30:00",
+    "streetAddress":"51 S Main Street",
+    "city":"Salt Lake City",
+    "state":"Utah",
+    "url":"http://craftlakecity.com/workshops",
+    "category":"Cooking"
+  },
+  {
+    "name":"Upcycled Coasters with Stephanie Coppa of 2nd Hand Coast",
+    "description":"Upcycled Coasters with Stephanie Coppa of 2nd Hand Coast will teach DIYâ€™ers and upcyclers how to recycle and reuse a variety of empty beverage labels to make awesome coasters. Stephanie and 2nd Hand Coast strive to help abusers, victims, and families from the affects of alcohol addiction. A portion of their proceeds are donated to organizations that help fund rehabilitation programs for those affected by this disease.",
+    "date":"12/3/2015 18:30:00",
+    "streetAddress":"51 S Main Street",
+    "city":"Salt Lake City",
+    "state":"Utah",
+    "url":"http://craftlakecity.com/workshops",
+    "category":"Craft"
+  },
+  {
+    "name":"Place Card Arrows with Stacey Foster and Mineral and Matter",
+    "description":"The Place card Arrows Workshop with Stacey Foster of Mineral and Matter will teach DIYâ€™ers how to create and design their very own arrows! Mineral and Matter creates a beautiful collection of decorative arrows and a curated selection of artisan jewelry.  They have a studio in downtown Salt Lake City on Pierpont Row with a store on the main level.",
+    "date":"8/6/2015 18:30:00",
+    "streetAddress":"51 S Main Street",
+    "city":"Salt Lake City",
+    "state":"Utah",
+    "url":"http://craftlakecity.com/workshops",
+    "category":"Craft"
+  },
+  {
+    "name":"Leather Luggage Tags with Brooke and Mike Sasser of Butter Bean Leather Co.",
+    "description":"The Leather Work Workshop with Brooke and Mike Sasser of Butter Bean Leather Co. will teach DIYâ€™ers how to make their very own leather luggage tags, perfect for that next flight! Each of Butter Bean Leather Co.â€™s products are handmade from start to finish with high quality 100% genuine cowhide leather.",
+    "date":"8/6/2015 18:30:00",
+    "streetAddress":"51 S Main Street",
+    "city":"Salt Lake City",
+    "state":"Utah",
+    "url":"http://craftlakecity.com/workshops",
+    "category":"Craft"
+  }
+]

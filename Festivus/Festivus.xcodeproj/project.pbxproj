@@ -14,6 +14,13 @@
 		2CB13E1C1B76B45500F2D4AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB13E1B1B76B45500F2D4AA /* Images.xcassets */; };
 		2CB13E1F1B76B45500F2D4AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB13E1D1B76B45500F2D4AA /* LaunchScreen.xib */; };
 		2CB13E2B1B76B45500F2D4AA /* FestivusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB13E2A1B76B45500F2D4AA /* FestivusTests.m */; };
+		6825090B1B76EE410024F2A7 /* clcmusic.json in Resources */ = {isa = PBXBuildFile; fileRef = 682509091B76EE410024F2A7 /* clcmusic.json */; };
+		6825090C1B76EE410024F2A7 /* clcvendors.json in Resources */ = {isa = PBXBuildFile; fileRef = 6825090A1B76EE410024F2A7 /* clcvendors.json */; };
+		6825090D1B76F2170024F2A7 /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6061B76C7AD00FE5B08 /* EventController.m */; };
+		6825090E1B76F21A0024F2A7 /* VendorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB5FD1B76B90800FE5B08 /* VendorController.m */; };
+		6825090F1B76F21C0024F2A7 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6001B76BDCB00FE5B08 /* Event.m */; };
+		682509101B76F2200024F2A7 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 242CB6031B76BDE300FE5B08 /* Vendor.m */; };
+		682509121B76FFD80024F2A7 /* clcworkshops.json in Resources */ = {isa = PBXBuildFile; fileRef = 682509111B76FFD80024F2A7 /* clcworkshops.json */; };
 		68717A3B1B76BE9900F38821 /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A3A1B76BE9900F38821 /* EventListViewController.m */; };
 		68717A411B76BF1700F38821 /* MusicEventDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A401B76BF1700F38821 /* MusicEventDataSource.m */; };
 		68717A441B76BF3000F38821 /* WorkshopEventDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 68717A431B76BF3000F38821 /* WorkshopEventDataSource.m */; };
@@ -54,6 +61,9 @@
 		2CB13E241B76B45500F2D4AA /* FestivusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FestivusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB13E291B76B45500F2D4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB13E2A1B76B45500F2D4AA /* FestivusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FestivusTests.m; sourceTree = "<group>"; };
+		682509091B76EE410024F2A7 /* clcmusic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clcmusic.json; sourceTree = "<group>"; };
+		6825090A1B76EE410024F2A7 /* clcvendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clcvendors.json; sourceTree = "<group>"; };
+		682509111B76FFD80024F2A7 /* clcworkshops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clcworkshops.json; sourceTree = "<group>"; };
 		68717A391B76BE9900F38821 /* EventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewController.h; sourceTree = "<group>"; };
 		68717A3A1B76BE9900F38821 /* EventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListViewController.m; sourceTree = "<group>"; };
 		68717A3F1B76BF1700F38821 /* MusicEventDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicEventDataSource.h; sourceTree = "<group>"; };
@@ -114,6 +124,9 @@
 				2CB13E181B76B45500F2D4AA /* Main.storyboard */,
 				2CB13E1B1B76B45500F2D4AA /* Images.xcassets */,
 				2CB13E1D1B76B45500F2D4AA /* LaunchScreen.xib */,
+				682509091B76EE410024F2A7 /* clcmusic.json */,
+				6825090A1B76EE410024F2A7 /* clcvendors.json */,
+				682509111B76FFD80024F2A7 /* clcworkshops.json */,
 				2CB13E0E1B76B45500F2D4AA /* Supporting Files */,
 			);
 			path = Festivus;
@@ -261,7 +274,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6825090B1B76EE410024F2A7 /* clcmusic.json in Resources */,
+				6825090C1B76EE410024F2A7 /* clcvendors.json in Resources */,
 				2CB13E1A1B76B45500F2D4AA /* Main.storyboard in Resources */,
+				682509121B76FFD80024F2A7 /* clcworkshops.json in Resources */,
 				2CB13E1F1B76B45500F2D4AA /* LaunchScreen.xib in Resources */,
 				2CB13E1C1B76B45500F2D4AA /* Images.xcassets in Resources */,
 			);
@@ -284,12 +300,16 @@
 				2CB13E171B76B45500F2D4AA /* VendorListViewController.m in Sources */,
 				68717A441B76BF3000F38821 /* WorkshopEventDataSource.m in Sources */,
 				68717A501B76C13100F38821 /* EventDetailTableViewController.m in Sources */,
+				6825090F1B76F21C0024F2A7 /* Event.m in Sources */,
 				68717A561B76C19B00F38821 /* DonateTableViewController.m in Sources */,
 				2CB13E141B76B45500F2D4AA /* AppDelegate.m in Sources */,
 				68717A4D1B76C11A00F38821 /* VendorDetailTableViewController.m in Sources */,
 				68717A3B1B76BE9900F38821 /* EventListViewController.m in Sources */,
+				682509101B76F2200024F2A7 /* Vendor.m in Sources */,
+				6825090D1B76F2170024F2A7 /* EventController.m in Sources */,
 				2CB13E111B76B45500F2D4AA /* main.m in Sources */,
 				68717A411B76BF1700F38821 /* MusicEventDataSource.m in Sources */,
+				6825090E1B76F21A0024F2A7 /* VendorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
